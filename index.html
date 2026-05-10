@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="description" content="Nutritive Harmony — nutrition therapy and health coaching with Katerina. Book sessions, food diary, intake form.">
+  <meta name="theme-color" content="#007A3F">
+  
+  <title>Nutritive Harmony</title>
+
+  <!-- PWA manifest -->
+  <link rel="manifest" href="manifest.json">
+  
+  <!-- Apple PWA support -->
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Nutritive Harmony">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="icons/icon-192.png">
+
+  <!-- Google Fonts: Cormorant Garamond (serif) + Inter (sans) + Archivo Black (logo) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <main class="app-container">
+
+    <!-- ============================ -->
+    <!-- HEADER: logo + brand name -->
+    <!-- ============================ -->
+    <header class="brand-header">
+      <img src="logo.png" alt="Nutritive Harmony" class="brand-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';">
+      <!-- Fallback SVG if logo.png is missing -->
+      <svg class="brand-logo-fallback" width="80" height="44" viewBox="0 0 32 18" style="display: none;" aria-hidden="true">
+        <path d="M 4 9 C 4 4, 13 4, 16 9 C 19 14, 28 14, 28 9 C 28 4, 19 4, 16 9 C 13 14, 4 14, 4 9 Z" fill="none" stroke="#007A3F" stroke-width="2"/>
+      </svg>
+      <h1 class="brand-name">NUTRITIVE HARMONY</h1>
+    </header>
+
+    <!-- ============================ -->
+    <!-- WELCOME / ABOUT -->
+    <!-- ============================ -->
+    <section class="welcome-section">
+      <h2 class="welcome-title">Welcome — I'm Katerina</h2>
+      <p class="welcome-text">
+        A mum of two, part-time finance specialist, and aspiring Nutritional Therapist and Health Coach.
+        <em>Come along with me as I step into this exciting new journey — let's learn together.</em>
+      </p>
+    </section>
+
+    <!-- ============================ -->
+    <!-- FOLLOW THE JOURNEY: IG + FB -->
+    <!-- ============================ -->
+    <section class="social-section">
+      <p class="section-label">— Follow the journey —</p>
+      <div class="social-grid">
+        
+        <a href="https://instagram.com/katerina_nutritive_harmony" target="_blank" rel="noopener" class="social-card">
+          <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="18" height="18" rx="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r="1" fill="currentColor"/>
+          </svg>
+          <span class="social-label">INSTAGRAM</span>
+          <span class="social-handle">@katerina_nutritive_harmony</span>
+        </a>
+
+        <a href="https://www.facebook.com/" target="_blank" rel="noopener" class="social-card">
+          <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 2 h-3 a5 5 0 0 0 -5 5 v3 H7 v4 h3 v8 h4 v-8 h3 l1 -4 h-4 V7 a1 1 0 0 1 1 -1 h3 z"/>
+          </svg>
+          <span class="social-label">FACEBOOK</span>
+          <span class="social-handle">Katerina Nutritive Harmony</span>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- ============================ -->
+    <!-- THE USEFUL STUFF: 3 buttons -->
+    <!-- ============================ -->
+    <section class="tools-section">
+      <p class="section-label">— The useful stuff —</p>
+
+      <div class="tools-stack">
+
+        <!-- BOOK A SESSION (Cal.com) -->
+        <a href="https://cal.eu/nutritiveharmony" target="_blank" rel="noopener" class="tool-card tool-card-primary">
+          <div class="tool-icon-wrap">
+            <svg class="tool-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="5" width="18" height="16" rx="2"/>
+              <line x1="3" y1="9" x2="21" y2="9"/>
+              <line x1="8" y1="3" x2="8" y2="7"/>
+              <line x1="16" y1="3" x2="16" y2="7"/>
+            </svg>
+          </div>
+          <div class="tool-text">
+            <span class="tool-title">Book a session</span>
+            <span class="tool-subtitle">Pick a time that suits you</span>
+          </div>
+          <svg class="tool-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="9 6 15 12 9 18"/>
+          </svg>
+        </a>
+
+        <!-- FOOD DIARY -->
+        <a href="diary.html" class="tool-card">
+          <div class="tool-icon-wrap">
+            <svg class="tool-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4 L20 4 L20 20 L4 20 Z"/>
+              <line x1="8" y1="9" x2="16" y2="9"/>
+              <line x1="8" y1="13" x2="16" y2="13"/>
+              <line x1="8" y1="17" x2="13" y2="17"/>
+            </svg>
+          </div>
+          <div class="tool-text">
+            <span class="tool-title">Food diary</span>
+            <span class="tool-subtitle">Get your personal diary link</span>
+          </div>
+          <svg class="tool-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="9 6 15 12 9 18"/>
+          </svg>
+        </a>
+
+        <!-- INTAKE FORM -->
+        <a href="intake.html" class="tool-card">
+          <div class="tool-icon-wrap">
+            <svg class="tool-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M9 2 L15 2 L15 6 L9 6 Z"/>
+              <path d="M5 6 L19 6 L19 22 L5 22 Z"/>
+              <line x1="9" y1="11" x2="15" y2="11"/>
+              <line x1="9" y1="15" x2="15" y2="15"/>
+            </svg>
+          </div>
+          <div class="tool-text">
+            <span class="tool-title">Intake form</span>
+            <span class="tool-subtitle">Tell me about you</span>
+          </div>
+          <svg class="tool-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="9 6 15 12 9 18"/>
+          </svg>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- ============================ -->
+    <!-- FOOTER -->
+    <!-- ============================ -->
+    <footer class="app-footer">
+      <p>
+        <a href="mailto:katerina@nutritiveharmony.com" class="footer-email">katerina@nutritiveharmony.com</a>
+      </p>
+      <p class="footer-copyright">© 2026 Nutritive Harmony</p>
+    </footer>
+
+  </main>
+
+  <!-- Register service worker for PWA functionality -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(reg => console.log('Service Worker registered'))
+          .catch(err => console.log('Service Worker registration failed:', err));
+      });
+    }
+  </script>
+
+</body>
+</html>
