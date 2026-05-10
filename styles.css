@@ -49,9 +49,10 @@ body {
 .brand-logo,
 .brand-logo-fallback {
   display: inline-block;
-  height: 56px;
-  width: auto;
-  margin-bottom: 14px;
+  height: auto;
+  width: 100%;
+   max-width: 400px;
+  margin-bottom: 0;
 }
 
 .brand-name {
@@ -409,7 +410,7 @@ body {
   
   .brand-logo,
   .brand-logo-fallback {
-    height: 48px;
+    max-width: 320px;
   }
   
   .brand-name {
