@@ -259,10 +259,11 @@ body {
    FOOTER
    ============================================ */
 .app-footer {
-  padding: 8px 28px 8px;
+  padding: 8px 28px 4px;
   text-align: center;
   border-top: 1px solid rgba(62, 102, 30, 0.12);
   background: #F4EFE9;
+   padding-bottom: max(4px, env(safe-area-inset-bottom));
 }
  
 .footer-email {
