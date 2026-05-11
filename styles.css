@@ -186,7 +186,17 @@ body {
 .tool-card-primary .tool-arrow {
   color: #F4EFE9;
 }
- 
+
+/* ============================================
+   STICKY BOTTOM (wraps social + footer)
+   ============================================ */
+.sticky-bottom {
+  position: sticky;
+  bottom: 0;
+  z-index: 10;
+  margin-top: auto;
+  background: #ffffff;
+}
 /* ============================================
    SOCIAL SECTION (IG + Facebook) — sticky to bottom
    ============================================ */
