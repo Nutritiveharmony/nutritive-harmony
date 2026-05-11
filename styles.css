@@ -193,10 +193,6 @@ body {
 .social-section {
   background: #ffffff;
   padding: 16px 24px;
-  position: sticky;
-  bottom: 0;
-  z-index: 10;
-  margin-top: auto;
 }
  
 .social-grid {
