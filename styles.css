@@ -431,6 +431,14 @@ body {
     padding-top: env(safe-area-inset-top);
   }
 }
+.inline-icon {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  vertical-align: -3px;
+  color: #007A3F;
+  margin: 0 2px;
+}
 /* ============================================
    INSTALL AS APP HINT
    ============================================ */
