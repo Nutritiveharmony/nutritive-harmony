@@ -20,7 +20,7 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="icons/icon-192.png">
  
-  <!-- Google Fonts: Cormorant Garamond (serif) + Inter (sans) + Archivo Black (logo) -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -31,9 +31,7 @@
  
   <main class="app-container">
  
-    <!-- ============================ -->
     <!-- HEADER: logo (sticky to top) -->
-    <!-- ============================ -->
     <header class="brand-header">
       <img src="logo.png" alt="Nutritive Harmony" class="brand-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';">
       <svg class="brand-logo-fallback" width="80" height="44" viewBox="0 0 32 18" style="display: none;" aria-hidden="true">
@@ -42,15 +40,13 @@
       <h1 class="brand-name">NUTRITIVE HARMONY</h1>
     </header>
  
-    <!-- ============================ -->
     <!-- THE USEFUL STUFF: 3 buttons (scrollable middle) -->
-    <!-- ============================ -->
     <section class="tools-section">
       <p class="section-label">— The useful stuff —</p>
  
       <div class="tools-stack">
  
-        <!-- BOOK A SESSION (Cal.com) -->
+        <!-- BOOK A SESSION -->
         <a href="https://cal.eu/nutritiveharmony" target="_blank" rel="noopener" class="tool-card tool-card-primary">
           <div class="tool-icon-wrap">
             <svg class="tool-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -108,14 +104,18 @@
         </a>
  
       </div>
+ 
+      <!-- INSTALL AS APP HINT (auto-detects device) -->
+      <section class="install-hint" id="installHint" style="display: none;">
+        <p class="install-hint-title">📱 Save as an app</p>
+        <p class="install-hint-text" id="installText"></p>
+      </section>
+ 
     </section>
  
-    <!-- ============================ -->
     <!-- STICKY BOTTOM: social + footer together -->
-    <!-- ============================ -->
     <div class="sticky-bottom">
  
-      <!-- FOLLOW NUTRITIVE HARMONY: IG + FB -->
       <section class="social-section">
         <p class="section-label">— Follow Nutritive Harmony —</p>
         <div class="social-grid">
@@ -141,7 +141,6 @@
         </div>
       </section>
  
-      <!-- FOOTER (email + copyright) -->
       <footer class="app-footer">
         <p>
           <a href="mailto:katerina@nutritiveharmony.com" class="footer-email">katerina@nutritiveharmony.com</a>
@@ -162,6 +161,35 @@
           .catch(err => console.log('Service Worker registration failed:', err));
       });
     }
+  </script>
+ 
+  <!-- Smart install hint — detects device and shows appropriate instructions -->
+  <script>
+    (function() {
+      // Don't show the hint if already running as an installed PWA
+      const isStandalone = window.matchMedia('(display-mode: standalone)').matches 
+        || window.navigator.standalone === true;
+      
+      if (isStandalone) {
+        return;
+      }
+ 
+      const ua = navigator.userAgent || navigator.vendor || window.opera;
+      const isIOS = /iPad|iPhone|iPod/.test(ua) && !window.MSStream;
+      const isAndroid = /android/i.test(ua);
+ 
+      const hint = document.getElementById('installHint');
+      const text = document.getElementById('installText');
+ 
+      if (isIOS) {
+        text.innerHTML = 'Tap the <strong>share button</strong> at the bottom of Safari → <strong>Add to Home Screen</strong> for one-tap access 🌿';
+        hint.style.display = 'block';
+      } else if (isAndroid) {
+        text.innerHTML = 'Tap the <strong>menu (⋮)</strong> at the top right of Chrome → <strong>Install app</strong> (or <strong>Add to Home screen</strong>) 🌿';
+        hint.style.display = 'block';
+      }
+      // On desktop: don't show the hint at all
+    })();
   </script>
  
 </body>
