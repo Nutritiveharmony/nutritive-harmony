@@ -182,10 +182,10 @@
       const text = document.getElementById('installText');
  
       if (isIOS) {
-        text.innerHTML = 'Tap the <svg class="inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg> <strong>share button</strong> at the bottom of Safari → <strong>Add to Home Screen</strong> for one-tap access ';
+        text.innerHTML = 'Tap <svg class="inline-icon" viewBox="0 0 24 24" fill="currentColor"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/></svg> at the bottom right of Safari → <svg class="inline-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg> <strong>share button</strong> → <strong>Add to Home Screen</strong>';
         hint.style.display = 'block';
       } else if (isAndroid) {
-        text.innerHTML = 'Tap the <strong>menu (⋮)</strong> at the top right of Chrome → <strong>Install app</strong> (or <strong>Add to Home screen</strong>) ';
+        text.innerHTML = 'Tap the <strong>menu (⋮)</strong> at the top right of Chrome → <strong>Install app</strong> (or <strong>Add to Home screen</strong>)';
         hint.style.display = 'block';
       }
       // On desktop: don't show the hint at all
