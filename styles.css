@@ -431,3 +431,37 @@ body {
     padding-top: env(safe-area-inset-top);
   }
 }
+/* ============================================
+   INSTALL AS APP HINT
+   ============================================ */
+.install-hint {
+  margin: 16px auto 0;
+  max-width: 460px;
+  padding: 14px 20px;
+  text-align: center;
+  background: rgba(0, 122, 63, 0.06);
+  border: 1px dashed rgba(0, 122, 63, 0.3);
+  border-radius: 12px;
+}
+
+.install-hint-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #007A3F;
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+
+.install-hint-text {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 14px;
+  color: #3E661E;
+  line-height: 1.5;
+  opacity: 0.9;
+}
+
+.install-hint-text strong {
+  font-weight: 600;
+  color: #007A3F;
+}
