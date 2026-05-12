@@ -4,14 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <meta name="theme-color" content="#007A3F">
-  <title>Intake form — Nutritive Harmony</title>
   
+  <title>Intake form — Nutritive Harmony</title>
+ 
+  <!-- PWA manifest -->
   <link rel="manifest" href="manifest.json">
-  <link rel="apple-touch-icon" href="icons/icon-192.png">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="Nutritive Harmony">
-  <link rel="icon" type="image/png" href="icons/icon-192.png">
-
+ 
+  <!-- Favicons (browser tabs, all sizes) -->
+  <link rel="icon" type="image/x-icon" href="favicons/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="favicons/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="favicons/favicon-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="favicons/favicon-512x512.png">
+ 
+  <!-- Apple Touch icons (iOS home screen) -->
+  <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+ 
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -19,82 +31,30 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
+ 
   <main class="page-container">
-
-    <a href="index.html" class="back-link">
-      ← Back to home
-    </a>
-
+    
+    <a href="index.html" class="back-link">← Back to home</a>
+ 
     <header class="page-header">
-      <h1 class="page-title">Tell me about you</h1>
-      <p class="page-subtitle">
-        A short form to help me get to know you before our first session — your goals, your habits, what you'd like to explore together.
-      </p>
+      <h1 class="page-title">Intake Form</h1>
+      <p class="page-subtitle">Tell me about you</p>
     </header>
-
-    <!-- ============================ -->
-    <!-- TALLY FORM EMBED -->
-    <!-- ============================
-         INSTRUCTIONS to embed your real intake form:
-         1. Build your intake form in Tally (https://tally.so) — free
-         2. Click Share → Embed → copy the iframe URL  
-         3. Replace src="about:blank" below with your real Tally URL
-         4. Save & re-upload this file
-         ============================ -->
-    
-    <div class="form-iframe-wrap" id="form-wrap">
-      <iframe 
-        src="about:blank"
-        title="Intake form"
-        loading="lazy"
-        id="tally-form">
-      </iframe>
-    </div>
-
-    <!-- Placeholder shown until intake form is ready -->
-    <div class="placeholder-notice" id="form-placeholder">
-      <strong>📝 Intake form coming soon</strong><br><br>
-      Katerina is currently designing the intake form for new clients (based on the questionnaires from her studies). Once it's ready, it will appear here so you can fill it in directly.<br><br>
-      In the meantime, please email <a href="mailto:katerina@nutritiveharmony.com" style="color: #007A3F;">katerina@nutritiveharmony.com</a> to introduce yourself.
-    </div>
-
-    <!-- ============================ -->
-    <!-- WHAT TO EXPECT -->
-    <!-- ============================ -->
-    <div style="margin-top: 28px;">
-      <p class="section-label">— What to expect —</p>
-      
-      <div class="info-card">
-        <p class="info-card-text">
-          The intake form usually takes <strong style="color: #007A3F;">10–15 minutes</strong> to complete.
-          <br><br>
-          It covers things like your current eating habits, lifestyle, sleep, stress, and what brought you to nutritional therapy. Everything you share is confidential and only used to help us work better together.
-          <br><br>
-          Take your time — there are no right or wrong answers. 🌿
-        </p>
-      </div>
-    </div>
-
+ 
+    <section class="page-content">
+      <p class="placeholder-text">
+        Soon you'll find the intake questionnaire here — a chance to share your health story, goals, and what brings you to nutritional therapy.
+      </p>
+      <p class="placeholder-text">
+        The form is currently being prepared based on best-practice consultation frameworks.
+      </p>
+      <!-- 
+        TODO: Embed Tally intake form here 
+        Replace this placeholder with: <iframe src="..." ...></iframe>
+      -->
+    </section>
+ 
   </main>
-
-  <script>
-    // Show/hide form vs placeholder based on whether form URL is set
-    const tallyForm = document.getElementById('tally-form');
-    const placeholder = document.getElementById('form-placeholder');
-    const formWrap = document.getElementById('form-wrap');
-    
-    if (tallyForm.src === 'about:blank' || tallyForm.src === window.location.href + 'about:blank') {
-      formWrap.style.display = 'none';
-    } else {
-      placeholder.style.display = 'none';
-    }
-    
-    // Register service worker
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('service-worker.js').catch(err => console.log(err));
-    }
-  </script>
-
+ 
 </body>
 </html>
