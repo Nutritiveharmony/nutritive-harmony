@@ -4,14 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <meta name="theme-color" content="#007A3F">
-  <title>Food diary — Nutritive Harmony</title>
   
+  <title>Food diary — Nutritive Harmony</title>
+ 
+  <!-- PWA manifest -->
   <link rel="manifest" href="manifest.json">
-  <link rel="apple-touch-icon" href="icons/icon-192.png">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="Nutritive Harmony">
-  <link rel="icon" type="image/png" href="icons/icon-192.png">
-
+ 
+  <!-- Favicons (browser tabs, all sizes) -->
+  <link rel="icon" type="image/x-icon" href="favicons/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="favicons/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="favicons/favicon-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="favicons/favicon-512x512.png">
+ 
+  <!-- Apple Touch icons (iOS home screen) -->
+  <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+ 
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -19,86 +31,30 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
+ 
   <main class="page-container">
-
-    <a href="index.html" class="back-link">
-      ← Back to home
-    </a>
-
+    
+    <a href="index.html" class="back-link">← Back to home</a>
+ 
     <header class="page-header">
-      <h1 class="page-title">Your food diary</h1>
-      <p class="page-subtitle">
-        Each client has a personal food diary, shared privately. Tell me how you'd like to receive your link and I'll send it to you.
-      </p>
+      <h1 class="page-title">Food Diary</h1>
+      <p class="page-subtitle">Track your meals, energy, and how you feel</p>
     </header>
-
-    <!-- ============================ -->
-    <!-- TALLY FORM EMBED -->
-    <!-- ============================
-         INSTRUCTIONS to enable this form:
-         1. Go to https://tally.so and sign up (free)
-         2. Create a new form with these fields:
-            - Your name (short text, required)
-            - Preferred contact (multiple choice: SMS / Email)
-            - Phone number (short text, conditional on SMS choice)
-            - Email address (email, conditional on Email choice)
-         3. In Tally, go to Settings → Notifications → add 
-            katerina@nutritiveharmony.com to receive submissions
-         4. Click Share → Embed → copy the iframe URL
-         5. Replace the src URL below with your real Tally URL
-         ============================ -->
-    
-    <div class="form-iframe-wrap">
-      <iframe 
-        src="about:blank"
-        title="Food diary request form"
-        loading="lazy"
-        id="tally-form">
-      </iframe>
-    </div>
-
-    <!-- Placeholder shown until Tally is set up -->
-    <div class="placeholder-notice" id="form-placeholder">
-      <strong>📋 Form coming soon</strong><br>
-      Once Katerina sets up the Tally form for diary requests, you'll be able to submit it directly here. In the meantime, please email <a href="mailto:katerina@nutritiveharmony.com" style="color: #007A3F;">katerina@nutritiveharmony.com</a> to request your food diary link.
-    </div>
-
-    <!-- ============================ -->
-    <!-- HOW IT WORKS -->
-    <!-- ============================ -->
-    <div style="margin-top: 28px;">
-      <p class="section-label">— How it works —</p>
-      
-      <div class="info-card">
-        <p class="info-card-text">
-          <strong style="color: #007A3F;">1.</strong> Tell me how you'd like to receive your link (SMS or email)<br><br>
-          <strong style="color: #007A3F;">2.</strong> I'll send you a personal Google Sheet within a few hours<br><br>
-          <strong style="color: #007A3F;">3.</strong> Open the link, then add it to your phone home screen for one-tap access<br><br>
-          <strong style="color: #007A3F;">4.</strong> Log your meals, snacks, and how you feel — I'll review before each session 🌿
-        </p>
-      </div>
-    </div>
-
+ 
+    <section class="page-content">
+      <p class="placeholder-text">
+        Soon you'll be able to request your personal food diary link here.
+      </p>
+      <p class="placeholder-text">
+        I'll send you a link to your own private diary where you can log your meals, mood, and energy throughout the day.
+      </p>
+      <!-- 
+        TODO: Embed Tally form here for food diary requests 
+        Replace this placeholder with: <iframe src="..." ...></iframe>
+      -->
+    </section>
+ 
   </main>
-
-  <script>
-    // Show/hide form vs placeholder based on whether Tally URL is set
-    const tallyForm = document.getElementById('tally-form');
-    const placeholder = document.getElementById('form-placeholder');
-    const formWrap = document.querySelector('.form-iframe-wrap');
-    
-    if (tallyForm.src === 'about:blank' || tallyForm.src === window.location.href + 'about:blank') {
-      formWrap.style.display = 'none';
-    } else {
-      placeholder.style.display = 'none';
-    }
-    
-    // Register service worker
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('service-worker.js').catch(err => console.log(err));
-    }
-  </script>
-
+ 
 </body>
 </html>
