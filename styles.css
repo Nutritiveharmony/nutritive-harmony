@@ -477,7 +477,7 @@ body {
    LANGUAGE SWITCHER
    ============================================ */
 .lang-switcher {
-  position: absolute;
+  position: fixed;
   top: 12px;
   right: 16px;
   z-index: 50;
