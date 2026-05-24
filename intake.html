@@ -28,7 +28,7 @@
 </head>
 <body>
 
-  <main class="page-container">
+  <main class="page-container intake-page">
     
     <!-- LANGUAGE SWITCHER -->
     <div class="lang-switcher" id="langSwitcher">
@@ -46,25 +46,99 @@
       </div>
     </div>
 
-    <a href="index.html" class="back-link" data-i18n="intake.back">← Back to home</a>
+    <a href="index.html" class="back-link">← Back to home</a>
 
     <header class="page-header">
-      <h1 class="page-title" data-i18n="intake.title">Intake Form</h1>
-      <p class="page-subtitle" data-i18n="intake.subtitle">Tell me about you</p>
+      <h1 class="page-title">Intake Form</h1>
+      <p class="page-subtitle">Tell me about you — this helps me prepare for our session</p>
     </header>
 
-    <section class="page-content">
-      <p class="placeholder-text" data-i18n="intake.placeholder1">
-        Soon you'll find the intake questionnaire here — a chance to share your health story, goals, and what brings you to nutritional therapy.
-      </p>
-      <p class="placeholder-text" data-i18n="intake.placeholder2">
-        The form is currently being prepared based on best-practice consultation frameworks.
-      </p>
+    <!-- WELCOME / START SCREEN -->
+    <section id="welcomeScreen" class="intake-screen">
+      <div class="welcome-card">
+        <h2>Welcome 🌿</h2>
+        <p>This questionnaire helps me understand your full health picture before we meet. It includes:</p>
+        <ul>
+          <li>📋 Basic personal info (1 minute)</li>
+          <li>🥗 Diet, lifestyle and medications (3 minutes)</li>
+          <li>🩺 16 sections about how you feel (about 20-25 minutes)</li>
+        </ul>
+        <p><strong>Total time:</strong> about 25-30 minutes.</p>
+        <p>📌 <em>Your answers save automatically — you can pause and come back later.</em></p>
+        <p>For each symptom, you'll rate from <strong>0 (never)</strong> to <strong>3 (frequently/severe)</strong>. Just answer how things have been for you lately. There are no right or wrong answers.</p>
+        <p>🔒 <em>Your responses are private and only seen by me.</em></p>
+        
+        <button class="intake-btn intake-btn-primary" id="startBtn">Begin →</button>
+        <button class="intake-btn intake-btn-link" id="resumeBtn" style="display:none;">Resume my saved progress</button>
+      </div>
+    </section>
+
+    <!-- FORM SCREEN (loaded dynamically by intake-form.js) -->
+    <section id="formScreen" class="intake-screen" style="display:none;">
+      
+      <!-- Progress bar -->
+      <div class="progress-wrap">
+        <div class="progress-info">
+          <span id="progressLabel">Step 1 of 18</span>
+          <span id="progressPercent">5%</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+      </div>
+
+      <!-- Page title -->
+      <h2 id="pageTitle" class="intake-page-title"></h2>
+      <p id="pageDescription" class="intake-page-description"></p>
+
+      <!-- Questions container (filled dynamically) -->
+      <div id="questionsContainer" class="questions-container"></div>
+
+      <!-- Navigation -->
+      <div class="intake-nav">
+        <button class="intake-btn intake-btn-secondary" id="prevBtn">← Previous</button>
+        <button class="intake-btn intake-btn-primary" id="nextBtn">Continue →</button>
+      </div>
+
+      <p class="autosave-note">💾 Auto-saved a moment ago</p>
+    </section>
+
+    <!-- SUBMITTING SCREEN -->
+    <section id="submittingScreen" class="intake-screen" style="display:none;">
+      <div class="welcome-card center-content">
+        <div class="spinner"></div>
+        <h2>Sending your form...</h2>
+        <p>Please don't close this page.</p>
+      </div>
+    </section>
+
+    <!-- SUCCESS SCREEN -->
+    <section id="successScreen" class="intake-screen" style="display:none;">
+      <div class="welcome-card center-content">
+        <div class="success-checkmark">✓</div>
+        <h2>Thank you! 🌿</h2>
+        <p>Your form has been received. I'll review it carefully before our session.</p>
+        <p>If you've booked a session, I'll see you then. Otherwise, you can book one anytime.</p>
+        <a href="https://cal.eu/nutritiveharmony" target="_blank" class="intake-btn intake-btn-primary">Book a session</a>
+        <a href="index.html" class="intake-btn intake-btn-link">Back to home</a>
+      </div>
+    </section>
+
+    <!-- ERROR SCREEN -->
+    <section id="errorScreen" class="intake-screen" style="display:none;">
+      <div class="welcome-card center-content">
+        <div class="error-mark">!</div>
+        <h2>Something went wrong</h2>
+        <p>We couldn't send your form just now. Your answers are still saved on this device.</p>
+        <p>Please try again, or contact me directly at <a href="mailto:katerina@nutritiveharmony.com">katerina@nutritiveharmony.com</a></p>
+        <button class="intake-btn intake-btn-primary" id="retryBtn">Try again</button>
+      </div>
     </section>
 
   </main>
 
   <script src="translations.js"></script>
+  <script src="intake-form.js"></script>
 
 </body>
 </html>
