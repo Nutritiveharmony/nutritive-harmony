@@ -11,7 +11,6 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="Nutritive Harmony">
 
-  <!-- Favicons -->
   <link rel="icon" type="image/x-icon" href="favicons/favicon.ico">
   <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
   <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
@@ -28,9 +27,8 @@
 </head>
 <body>
 
-  <main class="page-container">
+  <main class="page-container intake-page">
     
-    <!-- LANGUAGE SWITCHER -->
     <div class="lang-switcher" id="langSwitcher">
       <button class="lang-switcher-btn" id="langSwitcherBtn" aria-label="Change language">
         <span id="langLabel">EN</span>
@@ -46,25 +44,94 @@
       </div>
     </div>
 
-    <a href="index.html" class="back-link" data-i18n="diary.back">← Back to home</a>
+    <a href="index.html" class="back-link">← Back to home</a>
 
     <header class="page-header">
-      <h1 class="page-title" data-i18n="diary.title">Food Diary</h1>
-      <p class="page-subtitle" data-i18n="diary.subtitle">Track your meals, energy, and how you feel</p>
+      <h1 class="page-title">Food diary</h1>
+      <p class="page-subtitle">Three days of eating, simply observed</p>
     </header>
 
-    <section class="page-content">
-      <p class="placeholder-text" data-i18n="diary.placeholder1">
-        Soon you'll be able to request your personal food diary link here.
-      </p>
-      <p class="placeholder-text" data-i18n="diary.placeholder2">
-        I'll send you a link to your own private diary where you can log your meals, mood, and energy throughout the day.
-      </p>
+    <section id="welcomeScreen" class="intake-screen">
+      <div class="welcome-card">
+        <h2>Welcome</h2>
+        <p>This food diary helps me understand your eating patterns, energy, and how food makes you feel — over three days of normal life.</p>
+        <p><strong>This is not about counting calories.</strong> It's about gentle observation: what you ate, when, and how you felt.</p>
+
+        <ul>
+          <li>Log breakfast, lunch, dinner and snacks for 3 days</li>
+          <li>Note mood and energy after meals</li>
+          <li>Daily water, sleep, movement</li>
+          <li>Bowel movements (optional but useful)</li>
+          <li>Any symptoms you notice</li>
+        </ul>
+
+        <p><em>Your answers save automatically — you can fill this in across the 3 days as you go.</em></p>
+        <p><em>About 3-5 minutes per day.</em></p>
+        <p><em>Your responses are private and only seen by me.</em></p>
+
+        <button class="intake-btn intake-btn-primary" id="startBtn">Begin →</button>
+        <button class="intake-btn intake-btn-link" id="resumeBtn" style="display:none;">Resume my saved progress</button>
+      </div>
+    </section>
+
+    <section id="formScreen" class="intake-screen" style="display:none;">
+      
+      <div class="progress-wrap">
+        <div class="progress-info">
+          <span id="progressLabel">Step 1 of 10</span>
+          <span id="progressPercent">10%</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+      </div>
+
+      <h2 id="pageTitle" class="intake-page-title"></h2>
+      <p id="pageDescription" class="intake-page-description"></p>
+
+      <div id="questionsContainer" class="questions-container"></div>
+
+      <div class="intake-nav">
+        <button class="intake-btn intake-btn-secondary" id="prevBtn">← Previous</button>
+        <button class="intake-btn intake-btn-primary" id="nextBtn">Continue →</button>
+      </div>
+
+      <p class="autosave-note">Auto-saved a moment ago</p>
+    </section>
+
+    <section id="submittingScreen" class="intake-screen" style="display:none;">
+      <div class="welcome-card center-content">
+        <div class="spinner"></div>
+        <h2>Sending your diary...</h2>
+        <p>Please don't close this page.</p>
+      </div>
+    </section>
+
+    <section id="successScreen" class="intake-screen" style="display:none;">
+      <div class="welcome-card center-content">
+        <div class="success-checkmark">✓</div>
+        <h2>Thank you</h2>
+        <p>Your food diary has been received. I'll review it carefully before our session.</p>
+        <p>If you've booked a session, I'll see you then. Otherwise, you can book one anytime.</p>
+        <a href="https://cal.eu/nutritiveharmony" target="_blank" class="intake-btn intake-btn-primary">Book a session</a>
+        <a href="index.html" class="intake-btn intake-btn-link">Back to home</a>
+      </div>
+    </section>
+
+    <section id="errorScreen" class="intake-screen" style="display:none;">
+      <div class="welcome-card center-content">
+        <div class="error-mark">!</div>
+        <h2>Something went wrong</h2>
+        <p>We couldn't send your diary just now. Your answers are still saved on this device.</p>
+        <p>Please try again, or contact me directly at <a href="mailto:katerina@nutritiveharmony.com">katerina@nutritiveharmony.com</a></p>
+        <button class="intake-btn intake-btn-primary" id="retryBtn">Try again</button>
+      </div>
     </section>
 
   </main>
 
   <script src="translations.js"></script>
+  <script src="food-diary.js"></script>
 
 </body>
 </html>
