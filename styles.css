@@ -969,3 +969,32 @@ select.question-input {
     font-size: 10px;
   }
 }
+/* ============================================
+   FOOD DIARY — 5-button scale
+   ============================================ */
+
+.scale-group-5 {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 6px;
+}
+
+.scale-group-5 .scale-option {
+  min-height: 50px;
+  padding: 12px 4px;
+}
+
+.scale-group-5 .scale-number {
+  font-size: 18px;
+}
+
+@media (max-width: 480px) {
+  .scale-group-5 .scale-option {
+    padding: 10px 2px;
+    min-height: 46px;
+  }
+  
+  .scale-group-5 .scale-number {
+    font-size: 16px;
+  }
+}
