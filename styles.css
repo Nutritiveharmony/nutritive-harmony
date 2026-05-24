@@ -72,7 +72,7 @@ body {
 }
  
 /* ============================================
-   SECTION LABELS (the small italic labels)
+   SECTION LABELS
    ============================================ */
 .section-label {
   font-family: 'Inter', sans-serif;
@@ -109,14 +109,30 @@ body {
   gap: 16px;
   text-decoration: none;
   border: 1px solid rgba(0, 122, 63, 0.2);
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
   color: #3E661E;
 }
  
-.tool-card:hover,
-.tool-card:active {
+.tool-card:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 122, 63, 0.08);
+}
+
+/* Tap feedback for white tool cards — green flash on press */
+.tool-card:not(.tool-card-primary):active {
+  background: #007A3F;
+  border-color: #007A3F;
+  color: #F4EFE9;
+  transform: scale(0.98);
+}
+
+.tool-card:not(.tool-card-primary):active .tool-icon-wrap {
+  background: rgba(244, 239, 233, 0.15);
+}
+
+.tool-card:not(.tool-card-primary):active .tool-icon,
+.tool-card:not(.tool-card-primary):active .tool-arrow {
+  color: #F4EFE9;
 }
  
 .tool-card-primary {
@@ -134,6 +150,7 @@ body {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  transition: background 0.15s ease;
 }
  
 .tool-card-primary .tool-icon-wrap {
@@ -144,6 +161,7 @@ body {
   width: 22px;
   height: 22px;
   color: #007A3F;
+  transition: color 0.15s ease;
 }
  
 .tool-card-primary .tool-icon {
@@ -180,6 +198,7 @@ body {
   height: 18px;
   color: #007A3F;
   flex-shrink: 0;
+  transition: color 0.15s ease;
 }
  
 .tool-card-primary .tool-arrow {
@@ -198,61 +217,44 @@ body {
 }
 
 /* ============================================
-   SOCIAL SECTION (IG + Facebook)
+   SOCIAL SECTION (IG + Facebook) — pill icons
    ============================================ */
 .social-section {
   background: #ffffff;
   padding: 16px 24px;
 }
  
-.social-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  max-width: 420px;
+.social-pills {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
   margin: 0 auto;
 }
- 
-.social-card {
+
+.social-pill {
+  width: 44px;
+  height: 44px;
   background: #F4EFE9;
-  padding: 10px 10px;
-  border-radius: 8px;
-  text-align: center;
-  text-decoration: none;
   border: 1px solid rgba(0, 122, 63, 0.18);
+  border-radius: 50%;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 4px;
-  transition: transform 0.15s ease, border-color 0.15s ease;
+  justify-content: center;
+  text-decoration: none;
+  transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
 }
- 
-.social-card:hover,
-.social-card:active {
+
+.social-pill:hover,
+.social-pill:active {
   transform: translateY(-2px);
   border-color: rgba(0, 122, 63, 0.4);
+  background: rgba(0, 122, 63, 0.06);
 }
- 
+
 .social-icon {
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   color: #007A3F;
-  margin-bottom: 2px;
-}
- 
-.social-label {
-  font-family: 'Inter', sans-serif;
-  font-size: 13px;
-  color: #007A3F;
-  letter-spacing: 1.5px;
-  font-weight: 700;
-}
- 
-.social-handle {
-  font-family: 'Lora', Georgia, serif;
-  font-size: 14px;
-  color: #3E661E;
-  opacity: 0.85;
 }
  
 /* ============================================
