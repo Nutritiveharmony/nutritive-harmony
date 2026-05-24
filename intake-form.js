@@ -264,10 +264,7 @@ const FORM_PAGES = [
       { id: 's5_slowHealing', type: 'scale', label: 'Cuts heal slowly and/or scar easily' },
       { id: 's5_decreasedTaste', type: 'scale', label: 'Decreased sense of taste or smell' }
     ]
-  }
-];
-
-,
+  },
   {
     title: 'Section 6',
     description: 'For each symptom, rate from 0 (never) to 3 (frequently/severe).',
